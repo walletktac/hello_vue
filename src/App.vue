@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div class="app">
+    <div class="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -8,6 +8,6 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
