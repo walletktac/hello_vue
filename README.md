@@ -1,5 +1,10 @@
 # hello_vue
+```
+projekt wykonany na podstawie vloga https://www.youtube.com/channel/UCq8XmOMtrUCb8FcFHQEd8_g
 
+
+
+```
 ## Project setup
 ```
 npm install
