@@ -46,6 +46,5 @@ export default {
     margin: 0;
     padding: 30px;
     width: 100%;
-    background-image: url('../assets/')
   }
 </style>
