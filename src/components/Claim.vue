@@ -1,5 +1,5 @@
 <template>
-<div class="cliamWrapper">
+<div class="claimWrapper">
     <h1 class="claim">
         SPACER
     </h1>
@@ -17,14 +17,15 @@ export default {
   name: 'Claim'
 };
 </script>
+
 <style lang="scss" scoped>
-.claimWrapper{
-    
+.claimWrapper{    
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 .claim{
     font-size: 50px;
