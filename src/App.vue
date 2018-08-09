@@ -12,5 +12,7 @@
 }
 body{
   font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 </style>

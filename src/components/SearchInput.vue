@@ -31,6 +31,7 @@ export default{
       border: 0;
       border-bottom: 1px solid #000;
       outline: none;
+      background: none;
     }
   
 
