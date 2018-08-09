@@ -6,8 +6,5 @@
 <script>
 export default {
   name: 'About',
-  components: {
-    HelloWorld,
-  },
 };
 </script>
