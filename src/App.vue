@@ -8,11 +8,10 @@
       </transition>
       <Claim v-if="step === 0 " />
       <SearchInput v-model="searchValue" @input="handleInput" :dark="step === 1"/>
-      <div class="results">
-        <div v-for=" item in results " :key="item.data[0].nasa_id">
-          <p>{{ item.links[0].href }}</p>
-        </div>
+      <div class="results" v-if="results && !loading && step === 1">
+        <Item v-for="item in results" :item="item" :key="item.data[0].nasa_id" @click.native="handleModalOpen(item)"/>
       </div>
+      <Modal v-if="modalOpen" @closeModal="modalOpen = false" />
     </div>
 </template>
 
@@ -23,6 +22,8 @@ import debounce from "lodash.debounce";
 import HeroImage from "@/components/HeroImage.vue";
 import SearchInput from "@/components/SearchInput.vue";
 import Claim from "@/components/Claim.vue";
+import Item from "@/components/Item.vue";
+import Modal from "@/components/Modal.vue";
 
 const API = "https://images-api.nasa.gov/search";
 
@@ -31,11 +32,14 @@ export default {
   components: {
     HeroImage,
     Claim,
-    SearchInput
+    SearchInput,
+    Item,
+    Modal
   },
 
   data() {
     return {
+      modalOpen: false,
       loading: false,
       step: 0,
       searchValue: "",
@@ -43,6 +47,9 @@ export default {
     };
   },
   methods: {
+    handleModalOpen() {
+      this.modalOpen = true;
+    },
     // eslint-disable-next-line
     handleInput: debounce(function() {
       this.loading = true;
@@ -103,5 +110,11 @@ body {
 .logo{
   position: absolute;
   top: 30px;
+}
+.results{
+  margin-top:50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 </style>
